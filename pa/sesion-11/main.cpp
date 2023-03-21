@@ -13,29 +13,35 @@ struct Vehiculo {
 };
 
 int main(){
-    struct Vehiculo vehiculo [10];
 
-    for (int i {0}; i < 10; i++){
-        printf("Ingresa la marca del auto: %d", i + 1 );
-        std::cin >> vehiculo[i].marca; 
+    int n {0};
 
-        printf("Ingresa el modelo del auto: %d", i + 1 );
-        std::cin >> vehiculo[i].modelo; 
+    printf("Ingresa el número de vehículos que registrarás: ");
+    std::cin >> n;    
 
-        printf("Ingresa el año del auto: %d", i + 1 );
-        std::cin >> vehiculo[i].anio; 
+    struct Vehiculo * vehiculo = new Vehiculo [n];
 
-        printf("Ingresa el número de ruedas del auto: %d", i + 1 );
-        std::cin >> vehiculo[i].ruedas; 
+    for (int i {0}; i < n; i++){
+        printf("Ingresa la marca del auto %d: ", i + 1 );
+        std::cin >> (vehiculo + 1) -> marca;
 
-        printf("Ingresa kilometraje del auto: %d", i + 1 );
-        std::cin >> vehiculo[i].kilometraje; 
+        printf("Ingresa el modelo del auto %d: ", i + 1 );
+        std::cin >> (vehiculo + 1) -> modelo;
 
-        printf("Ingresa el color del auto: %d", i + 1 );
-        std::cin >> vehiculo[i].color; 
+        printf("Ingresa el año del auto %d: ", i + 1 );
+        std::cin >> (vehiculo + 1) -> anio;
 
-        printf("Ingresa la placa del auto: %d", i + 1 );
-        std::cin >> vehiculo[i].placa; 
+        printf("Ingresa el número de ruedas del auto %d: ", i + 1 );
+        std::cin >> (vehiculo + 1) -> ruedas;
+
+        printf("Ingresa kilometraje del auto %d: ", i + 1 );
+        std::cin >> (vehiculo + 1) -> kilometraje;
+
+        printf("Ingresa el color del auto %d: ", i + 1 );
+        std::cin >> (vehiculo + 1) -> color;
+
+        printf("Ingresa la placa del auto %d: ", i + 1 );
+        std::cin >> (vehiculo + 1) -> placa;
     }
 }
 
