@@ -17,6 +17,7 @@
 #include "once_0250061.h"
 #include "doce_0250061.h"
 #include "trece_0250061.h"
+#include "catorce_0250061.h"
 
 int main(){
     int opc {0};
@@ -27,9 +28,9 @@ int main(){
         std::cout << "2  - Introducción Estructuras" << std::endl;
         std::cout << "3  - Introducción Punteros" << std::endl;
         std::cout << "4  - Ejercicio con punteros usándolos para crear memoria dinámica" << std::endl;
-        std::cout << "5  - Estructura Coche" << std::endl;
-        std::cout << "6  - Estructuras y biblioteca de Zoológico" << std::endl;
-        std::cout << "7  - Estructura Escuela, Alumno, Materia y Profesor" << std::endl;
+        std::cout << "5  - Ejercicio de estructura Coche" << std::endl;
+        std::cout << "6  - Ejercicio de estructuras y biblioteca de Zoológico" << std::endl;
+        std::cout << "7  - Ejercicio de Estructura Escuela, Alumno, Materia y Profesor" << std::endl;
         std::cout << "8  - Ejercicio de estructura Persona y función swap usando punteros" << std::endl;
         std::cout << "9  - Ejemplo paso por referencia" << std::endl;
         std::cout << "10 - Ejemplo paso por puntero" << std::endl;
@@ -81,6 +82,9 @@ int main(){
                 break;
             case 13:
                 trece::main();
+                break;
+            case 14:
+                catorce::main();
                 break;
     		default:
     			printf("No se ingresó una opción válida\n");
