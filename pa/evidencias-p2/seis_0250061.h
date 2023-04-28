@@ -58,6 +58,7 @@ namespace seis{
 
         delete[] zoo->animales;
         delete zoo;
+        return 0;
     }
 }
 
