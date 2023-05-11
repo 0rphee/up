@@ -1,0 +1,3 @@
+[submodule "classtime-matcher"]
+	path = poo/classtime-matcher
+	url = https://github.com/0rphee/classtime-matcher.git
