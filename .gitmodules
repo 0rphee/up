@@ -1,3 +1,6 @@
 [submodule "classtime-matcher"]
 	path = poo/classtime-matcher
 	url = https://github.com/0rphee/classtime-matcher.git
+[submodule "cmulador"]
+	path = pa/cmulador
+	url = https://github.com/0rphee/cmulador.git
