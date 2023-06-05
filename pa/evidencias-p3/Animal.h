@@ -4,8 +4,8 @@
 
 class Animal {
     protected:
-    unsigned int numPatas;	
-    unsigned int numOjos;
+    short numPatas;	
+    short numOjos;
     std::string sonido_r;
     std::string tipo;
     std::string color;
@@ -19,7 +19,13 @@ class Animal {
     }
 };
 
-Animal::Animal(){}
+Animal::Animal(){
+    this->numPatas = 0;
+    this->numOjos = 0;
+    this->sonido_r = "indefinido";
+    this->tipo = "indefinido";
+    this->color = "indefinido";
+}
 Animal::Animal(short numPatas, short numOjos, std::string sonido_r, std::string tipo, std::string color){
     this->numPatas = numPatas;
     this->numOjos = numOjos;
