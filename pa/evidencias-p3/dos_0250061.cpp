@@ -1,5 +1,5 @@
 #include <iostream>
-#include "conceptos.h"
+#include "conceptos_0250061.h"
 
 int main(){
     Conceptos * a = new Conceptos(500);

@@ -1,5 +1,5 @@
 #pragma once
-#include "A.h"
+#include "A_0250061.h"
 
 class B : private A{
 protected:

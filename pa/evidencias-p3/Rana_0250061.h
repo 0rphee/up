@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include "Animal.h"
+#include "Animal_0250061.h"
 
 class Rana : Animal {
     bool veneno;

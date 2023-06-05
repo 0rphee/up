@@ -1,7 +1,7 @@
 #include <cstdio>
 #include <iostream>
 
-#include "Vehiculo.h"
+#include "Vehiculo_0250061.h"
 
 std::string getString(std::string msg){
     std::cout << msg;
