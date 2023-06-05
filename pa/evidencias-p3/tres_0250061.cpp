@@ -1,3 +1,5 @@
+// ejercicio de información de Alumno, usando getters y setters
+
 #include <iostream>
 #include "Alumno_0250061.h"
 

@@ -1,3 +1,5 @@
+// ejercicio de clase Vehículo, usando una clase, con getters y setters
+
 #include <cstdio>
 #include <iostream>
 

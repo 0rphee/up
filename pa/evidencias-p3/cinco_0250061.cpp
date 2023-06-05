@@ -1,8 +1,11 @@
+// el programa es una demostración de diferentes tipos de herencia
+
 #include <iostream>
 #include "A_0250061.h"
 #include "B_0250061.h"
 #include "C_0250061.h"
 #include "D_0250061.h"
+
 
 int main(){
     A a;
