@@ -1,5 +1,5 @@
 #pragma once
-#include "C.h"
+#include "C_0250061.h"
 
 class D : public A{
 private:
