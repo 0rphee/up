@@ -3,14 +3,19 @@
 #include "Animal_0250061.h"
 
 class Rana : Animal {
+private:
     bool veneno;
-    void saltar();
-    void sonido();
 
-    public:
+public:
     Rana();
     Rana(short numPatas, short numOjos, std::string sonido_r, std::string tipo, std::string color, bool veneno);
     ~Rana();
+
+    void saltar();
+    void sonido();
+
+    bool getVeneno();
+    void setVeneno(bool tieneVeneno);
 };
 Rana::Rana(){}
 Rana::~Rana(){}
@@ -25,4 +30,11 @@ void Rana::saltar(){
 
 void Rana::sonido(){
     std::cout << sonido_r << "\n";
+}
+
+bool Rana::getVeneno(){
+    return this->veneno;
+}
+void Rana::setVeneno(bool tieneVeneno){
+    this->veneno = tieneVeneno;
 }
