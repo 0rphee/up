@@ -1,3 +1,5 @@
+// instanciación de clase Conceptos con diferentes constructores
+
 #include <iostream>
 #include "conceptos_0250061.h"
 
