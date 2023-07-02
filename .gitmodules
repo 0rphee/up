@@ -4,3 +4,6 @@
 [submodule "cmulador"]
 	path = pa/cmulador
 	url = https://github.com/0rphee/cmulador.git
+[submodule "curso-unity"]
+	path = curso-unity
+	url = https://github.com/0rphee/curso-unity.git
