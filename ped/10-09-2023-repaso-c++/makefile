@@ -15,6 +15,6 @@ $(TARGET): Source.cpp
 clean:
 	rm -rf $(BIN_DIR)
 
-run: $(TARGET)
-	$(TARGET)
+run: all
+	./$(TARGET)
 
