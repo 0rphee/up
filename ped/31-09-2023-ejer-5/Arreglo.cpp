@@ -1,7 +1,6 @@
 #include "Arreglo.h"
 #include <cstdio>
 #include <iostream>
-#include <malloc/_malloc.h>
 
 Arreglo::Arreglo() {
   cout << "\nRenglones: ";
@@ -27,13 +26,44 @@ void Arreglo::LeerNombre() {
 void Arreglo::Mostrar() {
   cout << '\n' << nom << " tu arreglo es:" << endl;
   for (int i = 0; i < reng; i++) {
-    for (int j = 0; i < col; j++) {
+    for (int j = 0; j < col; j++) {
       cout << '\t' << arr[i][j];
     }
     cout << endl;
   }
 }
 
-void Arreglo::Ordenar() {}
+void Arreglo::Ordenar() {
+  bool ordenado = false;
+  int itera = 0;
+  int aux;
 
-void Arreglo::Poblar() {}
+  for (int i = 0; i < reng; i++) {
+    ordenado = false;
+    itera = 0;
+
+    while (!ordenado) {
+      ordenado = true;
+      for (int j = 0; j < col - 1 - itera; j++) {
+        if (arr[i][j] > arr[i][j + 1]) {
+          aux = arr[i][j];
+          arr[i][j] = arr[i][j + 1];
+          arr[i][j + 1] = aux;
+          ordenado = false;
+        }
+      }
+      itera++;
+    }
+  }
+}
+
+void Arreglo::Poblar() {
+  for (int i = 0; i < reng; i++) {
+    cout << "\nRenglon " << i << ": " << endl;
+    for (int j = 0; j < col; j++) {
+      cout << "\tcolumna " << j << ": ";
+      cin >> arr[i][j];
+      cout << endl;
+    }
+  }
+}
