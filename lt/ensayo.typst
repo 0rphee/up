@@ -1,0 +1,65 @@
+#set par(justify: true)
+#set page("us-letter",  header: [
+    #set text(9pt)
+    _Mauro Rogelio Galindo Ibarra (ID: 0250061) #h(1fr) Lógica de Términos_
+  ],
+)
+
+= Definición de Lógica
+
+La lógica es un campo de estudio dentro de la filosofía originado hace más de dos mil  años. Con el paso del tiempo y el desarrollo de la filosofía, se han planteado  múltiples definiciones para la disciplina y su labor. En este ensayo se hará una exploración de algunas definiciones planteadas por diversos filósofos para poder concluir con una definición que resuelva los desafíos que presentan las definiciones iniciales.
+
+
+== Algunas definiciones
+
+Kant en sus textos enunció múltiples definiciones para la lógica, aquí un par de ellas:
+#strong[
++ "La ciencia de las reglas del entendimiento en general" #footnote[Tolley, C. (2017). The Place of Logic within Kant’s Philosophy. The Palgrave Kant Handbook, 165–187. doi:10.1057/978-1-137-54656-2_8] <kant>
+
++ "La lógica es una ciencia a priori de las leyes puras [universales] del entendimiento y de la razón en general"@kant
+]
+
+En estos dos planteamientos para establecer qué es la lógica, se puede notar un intento de expresar la lógica como una ciencia para la evaluación del pensamiento, este mismo siendo entendido como una capacidad de la mente para cierta 'actividad representacional'@kant. Evaluemos cada una de las citas:
+
++ *"La ciencia de las reglas del entendimiento en general":* 
+	- Aquí Kant plantea una definición muy amplia de lo que es la lógica. Aunque queda claro su papel como una disciplina que estudia cierto tipo reglas, 'el entendimiento' queda como un enunciado muy vago. Aun refiendose al 'entendimiento' en un contexto del pensamiento, la definición parece abarcar demasiado, sin dejar claro su rol u origen aparente en la mente humana.
+
++ *"La lógica es una ciencia a priori de las leyes puras [universales] del entendimiento y de la razón en general":* 
+- Ligeramente más detallada que la definición anterior, esta definición ve a la lógica como una disciplina exclusivamente anterior a la experiencia, aparentemente ignorando su propio postulado de el entendimiento como pensamiento, siendo estos mismos parte en la experiencia, pero sin considerar tanto al entendimiento como a la razón como procesos o metodologías.
+	- Sin embargo, al incluir 'leyes puras' (en el sentido de universales), encontramos implícito una preocupación valiosa y relevante en la labor de la lógica: la búsqueda de una certeza, una verdad, una corrección, que se debe mantener mediante un método sólido, aquí expresado como 'leyes'.
+
+
+Por otro lado, tenemos a Quine, quien propone su definición de 'lógica' de diferente manera:
+
+#strong[
+- "Si me presionaran para complementar la definición ostensiva de lógica de Tweedledee con una definición discursiva del mismo tema, diría que la lógica es el estudio sistemático de las verdades lógicas. Presionado aun más, diría que lea este libro.
+
+	Dado que veo la lógica como la resultante de dos componentes, la verdad y la gramática, trataré la verdad y la gramática de manera prominente. Pero argumentaré en contra de la doctrina de que las verdades lógicas son verdaderas debido a la gramática o al lenguaje." #footnote[Quine, Willard Van Orman (1986). Philosophy of Logic (2nd edición). Cambridge, MA.: Harvard University Press.] <quine>
+]
+
+El pasaje referido es el siguiente:
+
+#strong[
+- "(—Al contrario —continuó Tweedledee—, si fuera así, podría serlo; y si así fuera, así sería; pero como no lo es, no lo es. Esa es la lógica.)" #footnote[Alice’s Adventures in Wonderland by Lewis Carroll. (2008, June 27). Project Gutenberg. https://www.gutenberg.org/ebooks/11]<carroll>
+]
+
+Evaluemos esta definición: en primer fragmento de Quine, acierta en identificar en la lógica un campo de estudio. Sin embargo, el término 'verdades lógicas', queda libre a interpretación del lector, claro, tras haber leído el libro de Quine. Lo que nos deja con una definición un tanto desmembrada, se podría decir que hasta incompleta.
+
+Como podemos ver, esta definición está planteada de manera muy diferente a las de Kant. Al referir a la definición de Tweedledee, podríamos no tomar seriamente la cita, pues es un personaje que solamente parece hacer burla de la lógica con su enunciado. Sin embargo, el contexto del enunciado no debería detenernos para tratarlo con seriedad.
+
+Esta definición es estimulante de forma como las de Kant no lo son. En el juego de palabras de Tweedledee, aunque la primera impresión es de superficialidad, da en el clavo con lo que es el objeto de la lógica, los hechos, 'lo que es', o tal vez podría decirse también, lo que Quine llama 'las verdades lógicas' (asumiendo que hablen de lo mismo). 
+
+De igual manera, esta definición resalta (aunque se hace implícitamente), la existencia de un proceso, el razonamiento: "si fuera así, podría serlo; y si así fuera, así sería; pero como no lo es, no lo es", Tweedledee puede suponer que si así fuera así sería, pero no lo es, por lo tanto sabe que no lo es porque puede relacionar los hechos.
+
+Por la forma de la definición, esta misma falla, no es suficientemente clara y explícita, aun cuando se tuerce la vista para entenderla.
+
+== Conclusión
+
+Aunque lo siguiente no es una síntesis de las definiciones, la siguiente definición de lógica siguiente ayuda ampliamente a clarificar qué es, y resuelve problemáticas presentadas por las definiciones anteriores: "La lógica es el estudio de métodos y principios para distinguir los razonamientos correctos de los incorrectos."
+
+Esta definición evita el uso de términos posiblemente ambiguos y/o complejos de manera innecesaria, ofrece una síntesis concisa y efectiva de la esencia de la lógica, pero manteniendo el valor práctico de la definición . Permite analizar aquello que involucra a la lógica en diferentes partes: su naturaleza de estudio o investigación; lo que se investiga, es decir sus métodos, su procesos y explicaciones; y su propósito, las evaluaciones del proceso del razonamiento. 
+
+Esta definición, en su claridad y simplicidad, encapsula la naturaleza esencial de la lógica en nuestra búsqueda de la corrección, pero sin aun involucrarse en la labor de la argumentación y la dialéctica, evaluando solamente los razonamientos individuales.
+
+
+
