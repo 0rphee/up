@@ -15,14 +15,38 @@ Pila::Pila(int tam) {
   }
 }
 
-int Pila::Consultar() {}
+int Pila::Consultar() {
+  if (tope < min) {
+    return -1;
+  }
+  // mostrar el valor señalado por el tope
+  return pilaEnteros[tope];
+}
 
-int Pila::Insertar(int nuevoInt) {}
+int Pila::Extraer() {
 
-int Pila::Extraer() {}
+  // verificar que hayan valores en la pila
+  if (tope < min) {
+    return -1; // está vacía, no se extrae nada
+  }
+  // extraer valor en el tope
+  int extraido = pilaEnteros[tope];
+  pilaEnteros[tope] = 0;
+  tope--; // decrementar el valor de tope
+  return extraido;
+}
+
+int Pila::Insertar(int nuevoInt) {
+  if (tope >= max) {
+    return -1;
+  }
+  tope++;
+  pilaEnteros[tope] = nuevoInt;
+  return 0;
+}
 
 void Pila::Mostrar() {
-  cout << "Arreglo: " << endl;
+  cout << "Pila: " << endl;
 
   for (int i = max; i >= 0; i--) {
     cout << "\t" << pilaEnteros[i];
