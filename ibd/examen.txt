@@ -1,0 +1,128 @@
+/*
+
+Mauro Rogelio Galindo Ibarra
+Introducción a Bases de Datos
+
+1. La normalización de bases de datos, son las prácticas utilizadas en el diseño
+de bases de datos para evitar que se guarden datos repetidos, al igual que para 
+optimizar el almacenamiento que utilizan mejorando la facilidad de consulta de 
+información así como minimizando la posiblidad de que los datos se desactualicen.
+
+2. La primera forma normal, es un conjunto de reglas para cumplir con la normalización
+de datos: 1) No dar significado al orden de las filas. 2) No se pueden mezclar 
+elementos en una sola celda. Si se tienen que almacenar varios, cada uno debe ocupar
+un registro, singular. 3) Diseñar una tabla sin Primary Key, cada fila debe de poder 
+identificarse únicamente. 4) Si es que hay grupos de datos que se repiten, estos se 
+deben de permitir, pero se deben de representar de manera que cada elemento ocupe una 
+celda, sin mezclarlos todos juntos.
+
+3. Práctica
+
+Se utiliza la banda Radiohead.
+
+Se hacen las tablas MEMBERS, INSTRUMENTS y SONGS
+*/
+
+-- SECCIÓN MEMBERS
+CREATE TABLE MEMBERS (
+    MEMBER_ID INT PRIMARY KEY,
+    FULL_NAME VARCHAR(50),
+    BIRTHDATE DATE,
+    IS_VOCALIST BOOL,
+    START_DATE DATE,
+    END_DATE DATE
+);
+
+
+-- Ejemplo de datos
+INSERT INTO MEMBERS (MEMBER_ID, FULL_NAME, BIRTHDATE, IS_VOCALIST, START_DATE, END_DATE)
+VALUES
+    (1, 'Thom Yorke', '1968-10-07', TRUE, '1985-02-01', NULL),
+    (2, 'Jonny Greenwood', '1971-11-05', FALSE, '1991-02-01', NULL),
+    (3, 'Colin Greenwood', '1969-06-26', FALSE, '1985-02-01', NULL),
+    (4, 'Ed O’Brien', '1968-04-15', FALSE, '1985-02-01', NULL),
+    (5, 'Philip Selway', '1967-05-23', FALSE, '1985-02-01', NULL);
+
+-- SECCIÓN INSTRUMENTS
+
+CREATE TABLE INSTRUMENTS (
+    INSTRUMENT_ID INT PRIMARY KEY,
+    MEMBER_ID INT,
+    INSTRUMENT_NAME VARCHAR(30),
+    START_DATE DATE,
+    END_DATE DATE,
+    FOREIGN KEY (MEMBER_ID) REFERENCES MEMBERS(MEMBER_ID)
+);
+
+
+-- Ejemplo de datos
+INSERT INTO INSTRUMENTS (INSTRUMENT_ID, MEMBER_ID, INSTRUMENT_NAME, START_DATE, END_DATE)
+VALUES
+    (1, 1, 'Voz', '1985-02-01', NULL),
+    (2, 2, 'Guitarra', '1991-02-01', NULL),
+    (3, 3, 'Bajo', '1985-02-01', NULL),
+    (4, 4, 'Guitarra', '1985-02-01', NULL),
+    (5, 5, 'Batería', '1985-02-01', NULL);
+    
+-- SECCIÓN DE SONGS
+CREATE TABLE SONGS (
+    SONG_ID INT PRIMARY KEY,
+    TITLE VARCHAR(100),
+    RELEASE_DATE DATE,
+    GENRE VARCHAR(30),
+    IS_SINGLE BOOL,
+    PLAY_COUNT INT
+);
+
+-- Ejemplo de datos
+INSERT INTO SONGS (SONG_ID, TITLE, RELEASE_DATE, GENRE, IS_SINGLE, PLAY_COUNT)
+VALUES
+    (1, 'Creep', '1992-09-21', 'Alternative Rock', TRUE, 1000000),
+    (2, 'Paranoid Android', '1997-05-26', 'Alternative Rock', TRUE, 850000),
+    (3, 'Karma Police', '1997-06-16', 'Rock', TRUE, 920000),
+    (4, 'No Surprises', '1998-01-12', 'Alternative Rock', TRUE, 750000),
+    (5, 'Daydreaming', '2016-05-06', 'Punk Rock', TRUE, 660000);
+
+/*
+3. d) i) seleccionar toda la tabla MEMBERS para verificar que se 
+haya almacenado correctamente
+*/
+
+SELECT * FROM MEMBERS;
+
+/*
+3. d. ii) Extraer suma o promedio, o minimo o máximo de un campo numérico
+*/
+
+SELECT SUM(PLAY_COUNT) AS total_reproducciones FROM SONGS;
+
+-- 3. d. iii) Ordenar ascendentemente algún campo DATE o DATETIMEINSTRUMENTS
+SELECT * FROM MEMBERS
+ORDER BY BIRTHDATE ASC;
+
+-- 3. d. iv) Hacer consulta con un filtro en tipo VARCHAR
+
+SELECT * FROM SONGS
+WHERE GENRE = 'Alternative Rock';
+
+-- 3. d. v) Insertar un registro extra en la tabla de instrumentos o canciones
+INSERT INTO INSTRUMENTS (INSTRUMENT_ID, MEMBER_ID, INSTRUMENT_NAME, START_DATE, END_DATE)
+VALUES (6, 1, 'Teclado', '2000-02-15', NULL);
+
+
+-- 3. d. vi) Eliminar registros de una tabla con alguna condiciónINSTRUMENTS
+DELETE FROM INSTRUMENTS
+WHERE strftime('%Y', START_DATE) < '1990';
+
+-- 3. d. vii) Obtener el tipo de dato de algún campo
+
+PRAGMA table_info(SONGS);
+
+
+
+
+
+
+
+
+
