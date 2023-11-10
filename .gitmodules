@@ -7,3 +7,6 @@
 [submodule "curso-unity"]
 	path = curso-unity
 	url = https://github.com/0rphee/curso-unity.git
+[submodule "ticket-cpp"]
+	path = ped/ticket-cpp
+	url = https://github.com/0rphee/ticket-cpp.git
