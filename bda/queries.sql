@@ -2,7 +2,7 @@
 SELECT customerNumber,  SUM(quantityOrdered * priceEach) AS Tot
 FROM orders, orderdetails
 WHERE
-	orders.orderNumber = orderdetails.orderNumber
+    orders.orderNumber = orderdetails.orderNumber
     AND orders.status IN ('Shipped', 'Resolved')
     AND YEAR(orders.orderDate) = 2003
 GROUP BY customerNumber
@@ -13,7 +13,7 @@ ORDER BY customerNumber;
 SELECT YEAR(orders.orderDate),  SUM(quantityOrdered * priceEach) AS Tot
 FROM orders, orderdetails
 WHERE
-	orders.orderNumber = orderdetails.orderNumber
+    orders.orderNumber = orderdetails.orderNumber
     AND orders.status IN ('Shipped', 'Resolved')
 --     AND YEAR(orders.orderDate) = 2003
 GROUP BY YEAR(orders.orderDate);
@@ -24,7 +24,7 @@ GROUP BY YEAR(orders.orderDate);
 SELECT YEAR(orders.orderDate) AS _Y_, offices.country, SUM(quantityOrdered * priceEach) AS Tot
 FROM orders, orderdetails, customers, employees, offices
 WHERE
-	orders.orderNumber = orderdetails.orderNumber
+    orders.orderNumber = orderdetails.orderNumber
     AND orders.customerNumber = customers.customerNumber
     AND customers.salesRepEmployeeNumber = employees.employeeNumber
     AND employees.officeCode = offices.officeCode
@@ -38,7 +38,7 @@ ORDER BY _Y_, offices.country;
 SELECT offices.country, productlines.productLine, SUM(quantityOrdered) AS TotUnidadesVendidas
 FROM orders, orderdetails, customers, employees, offices, products, productlines
 WHERE
-	orders.orderNumber = orderdetails.orderNumber
+    orders.orderNumber = orderdetails.orderNumber
     AND orders.customerNumber = customers.customerNumber
     AND customers.salesRepEmployeeNumber = employees.employeeNumber
     AND employees.officeCode = offices.officeCode
