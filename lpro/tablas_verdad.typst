@@ -1,0 +1,18 @@
+
+21 de febrero de 2024
+
+#table(
+  columns: (auto, auto, auto, auto),
+  inset: 10pt,
+  align: horizon,
+  [*P*], [*Q*], [*R*], [*$(P or not Q) arrow not R$*],
+  $V$, $V$, $V$, align(center)[$F$],
+  $V$, $V$, $F$, align(center)[$V$],
+  $V$, $F$, $V$, align(center)[$F$],
+  $V$, $F$, $F$, align(center)[$V$],
+  $F$, $V$, $V$, align(center)[$V$],
+  $F$, $V$, $F$, align(center)[$V$],
+  $F$, $F$, $V$, align(center)[$F$],
+  $F$, $F$, $F$, align(center)[$V$],
+)
+
