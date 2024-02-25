@@ -1,9 +1,10 @@
 
 def unidir(p: bool, q: bool):
-    if p == True and q == False:
+    if p is True and q is False:
         return False
     else:
         return True
+
 
 def bidir(p: bool, q: bool):
     if p == q:
@@ -11,10 +12,13 @@ def bidir(p: bool, q: bool):
     else:
         return False
 
+
 def genTabla(func, nomFunc: str, typst=True):
     def s(v: bool):
-        if v == True: return "V"
-        else: return "F"
+        if v is True:
+            return "V"
+        else:
+            return "F"
     tabla = f"""
 #table(
   columns: (auto, auto, auto, auto),
@@ -30,7 +34,7 @@ def genTabla(func, nomFunc: str, typst=True):
 
     comb = [(p, q, r) for p in tVals for q in tVals for r in tVals]
     for (p, q, r) in comb:
-        res = func(p,q,r)
+        res = func(p, q, r)
         if not typst:
             print(f"{p}\t{q}\t{r}\t{res}")
         tabla += f"  ${s(p)}$, ${s(q)}$, ${s(r)}$, align(center)[${s(res)}$],\n"
