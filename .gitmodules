@@ -10,3 +10,6 @@
 [submodule "ticket-cpp"]
 	path = ped/ticket-cpp
 	url = https://github.com/0rphee/ticket-cpp.git
+[submodule "prop-logic-paevty"]
+	path = lpro/prop-logic-paevty
+	url = git@github.com:0rphee/prop-logic-paevty.git
