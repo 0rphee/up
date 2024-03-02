@@ -50,4 +50,5 @@
 # run from shell
 # $ activate-miniconda.sh
 
-eval "$(/home/orphee/miniconda3/bin/conda shell.zsh hook)" && conda activate amb
+# eval "$(/home/orphee/miniconda3/bin/conda shell.zsh hook)" && conda activate amb
+eval "$(conda shell.zsh hook)" && conda activate amb
