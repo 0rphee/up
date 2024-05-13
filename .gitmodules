@@ -13,9 +13,6 @@
 [submodule "prop-logic-paevty"]
 	path = lpro/prop-logic-paevty
 	url = git@github.com:0rphee/prop-logic-paevty.git
-[submodule "ex1-practico-ia"]
-	path = ia/ex1-practico-ia
-	url = git@github.com:0rphee/ex1-practico-ia.git
 [submodule "bda-dashboard"]
 	path = bda/bda-dashboard
 	url = git@github.com:0rphee/bda-dashboard.git
