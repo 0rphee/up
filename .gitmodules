@@ -16,3 +16,6 @@
 [submodule "bda-dashboard"]
 	path = bda/bda-dashboard
 	url = git@github.com:0rphee/bda-dashboard.git
+[submodule "ia-vuelos"]
+	path = ia/ia-vuelos
+	url = git@github.com:0rphee/ia-vuelos.git
