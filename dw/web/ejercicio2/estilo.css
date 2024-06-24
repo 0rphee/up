@@ -1,0 +1,143 @@
+
+body {
+  color: rgb(88, 88, 88);
+  background-color: #FFF5E1;
+  margin: 0;
+  font-family: "Playwrite AU VIC", sans-serif;
+  font-size: large;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body > * {
+  padding: .5em 1em;
+}
+
+h1 {
+  text-align: center;
+}
+
+header {
+  background-color: #0C1844;
+  padding: 2.5rem 0 0 0;
+}
+
+header h1 {
+  color: #FF6969;
+  margin: 0 ;
+  font-weight: 900;
+}
+
+/* header {
+  background-image: url("haskell-uwu.png");
+  background-repeat: repeat;
+} */
+
+
+nav ul {
+  list-style: none;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 5%;
+
+  margin: 0;
+  padding: 0;
+  margin-top: 2rem;
+  color:#ffebc3;
+  background-color: #FF6969;
+  font-size: x-large;
+}
+
+nav li {
+  margin-left: 0;
+  padding: 5px;
+  cursor: pointer;
+}
+
+nav li:first-child {
+  margin-left: auto;
+}
+
+nav li:last-child {
+  margin-right: auto;
+}
+
+nav li:hover {
+  background-color: #ffebc3;
+  color: #0C1844;
+}
+
+
+main {
+  flex: 1;
+}
+
+main p {
+  font-size: 1.2em;
+}
+
+main ul {
+  list-style: none;
+  padding: 0 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1em;
+}
+
+main li {
+  background-color: #ffebc3;
+  color: #0C1844;
+  margin: .5em 0;
+  padding: .3em;
+  border-radius: 10px;
+  border: 2px rgb(88, 88, 88) solid;
+  flex-grow: 1;
+  flex-shrink: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+li h3 {
+  padding: 0;
+  margin: 0;
+}
+
+li div {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+div img {
+  max-width: 300px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+}
+
+
+li p {
+  font-size: small;
+}
+
+footer {
+  background-color: rgb(88, 88, 88);
+  color: #ffebc3;
+  text-align: center;
+  position: sticky;
+  bottom: 0px;
+}
+
+footer p {
+  margin: 0;
+}
+
