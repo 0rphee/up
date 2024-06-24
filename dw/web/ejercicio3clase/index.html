@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+
+    <main>
+        <h1>Contacto</h1>
+        <form name="myForm" id="myForm" action="https://api.web3forms.com/submit" method="POST">
+
+            <input type="hidden" name="access_key" value="91e7a0ff-0dac-46cf-bd9e-5ef39cedd0f3">
+
+            <div class="campo">
+                <label for="name">Nombre</label>
+                <input type="text" name="name" required id="name">
+            </div>
+
+            <div class="campo">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" name="email" required id="email">
+            </div>
+
+            <div class="campo">
+                <label for="message">Mensaje</label>
+                <textarea name="message" id="message" required></textarea>
+            </div>
+
+            <button type="button">Enviar</button>
+
+            <!-- Honeypot Spam Protection -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+        </form>
+        <div class="success hidden">¡Mensaje enviado con éxito!</div>
+        <div class="error hidden">Error, mensaje no enviado</div>
+    </main>
+
+    <iframe name="frame"></iframe>
+</body>
+
+</html>
