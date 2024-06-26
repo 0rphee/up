@@ -19,3 +19,6 @@
 [submodule "ia-vuelos"]
 	path = ia/ia-vuelos
 	url = git@github.com:0rphee/ia-vuelos.git
+[submodule "dw-portfolio"]
+	path = dw/dw-portfolio
+	url = git@github.com:Ksound22/developer-portfolio.git
