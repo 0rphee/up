@@ -58,4 +58,34 @@ function setTimer(mod, pos) {
     updateTimer()
 }
 
+var timerRunning = false;
+
+function runTimer() {
+    if (timerRunning) {
+        setTimer(-1, 2);
+        if (timerRunning) {
+            setTimeout(() => {
+                runTimer()
+            }, 1000);
+        }
+    }
+}
+
+function iniciarTimer() {
+    if (!timerRunning) {
+        timerRunning = true;
+        runTimer();
+    }
+}
+
+function pausarTimer() {
+    timerRunning = false;
+}
+
+function detenerTimer() {
+    pausarTimer();
+    timer = [0, 0, 0];
+    updateTimer();
+}
+
 updateTimer();
