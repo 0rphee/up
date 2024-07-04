@@ -14,13 +14,17 @@
         crossorigin="anonymous"></script>
     <!-- BOOTSTRAP -->
 
+    <!-- FONT-AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- FONT-AWESOME -->
+
     <script defer src="script.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="d-flex">
+<body class="d-flex full-height">
 
-    <form class="card m-auto p-3" action="registrarProducto.php" method="post">
+    <form class="card m-auto p-3" action="components/registrarProducto.php" method="post">
         <h3>Nuevo producto:</h3>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">@</span>

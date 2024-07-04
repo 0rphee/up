@@ -1,6 +1,8 @@
 <?php
 
-$content = file_get_contents("productos.json");
+$path = "../db/productos.json";
+
+$content = file_get_contents($path);
 $productos = json_decode($content, TRUE);
 
 $producto = [
@@ -11,12 +13,12 @@ $producto = [
 
 array_push( $productos, $producto );
 
-$handler = fopen("productos.json", "w+");
+$handler = fopen($path, "w+");
 fwrite($handler, json_encode($productos));
 fclose($handler);
 ?>
 
 <script>
-    location.href="misProductos.php"
+    location.href="../misProductos.php"
 </script>
 

@@ -1,6 +1,7 @@
 <?php
 
-$content = file_get_contents("productos.json");
+
+$content = file_get_contents("./db/productos.json");
 $productos = json_decode($content, TRUE);
 
 ?>
@@ -22,39 +23,54 @@ $productos = json_decode($content, TRUE);
         crossorigin="anonymous"></script>
     <!-- BOOTSTRAP -->
 
-    <script defer src="script.js"></script>
+    <!-- FONT-AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- FONT-AWESOME -->
+    
+    <script defer src="./js/shopping-cart.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="d-flex">
-    <div class="m-auto card">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Precio</th>
-                    <th>Cantidad</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                foreach ($productos as $prod) {
-                    echo "<tr>
-                        <td>{$prod['nombre']}</td>
-                        <td>{$prod['precio']}</td>
-                        <td>{$prod['cantidad']}</td>
+<body>
+
+    <?php include ("./components/navbar.php"); ?>
+
+    <div class="d-flex full-height">
+        <div class="m-auto card">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    for ($i=0; $i < count($productos); $i++) {
+                        echo "<tr>
+                        <td>{$productos[$i]['nombre']}</td>
+                        <td>{$productos[$i]['precio']}</td>
+                        <td>{$productos[$i]['cantidad']}</td>
+                        <td class='d-flex'>
+                            <button class='m-auto btn btn-sm btn-secondary' type='button' onclick='addProducto(".$i.")'>
+                                <i class='fas fa-cart-plus'>
+                                </i>
+                            </button>
+                        </td>
                     </tr>";
-                }
-                ?>
-            </tbody>
-        </table>
+                    }
+                    ?>
+                </tbody>
+            </table>
 
-        <div class="row m-0 py-3">
-            <a class="m-auto btn btn-primary w-fit" href="producto.php">Ir a página de inicio</a>
+            <div class="row m-0 py-3">
+                <a class="m-auto btn btn-primary w-fit" href="producto.php">Ir a página de inicio</a>
+            </div>
+
         </div>
-
     </div>
-
 </body>
 
 </html

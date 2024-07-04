@@ -1,7 +1,12 @@
-body {
-    height: 100vh;
+
+.full-height {
+    height: 90vh;
 }
 
 .w-fit {
     width: fit-content;
+}
+
+.hidden {
+    display: none;
 }
