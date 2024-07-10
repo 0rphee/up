@@ -1,0 +1,16 @@
+
+.full-height {
+    height: 90vh;
+}
+
+.full-width {
+    width: 90vh;
+}
+
+.w-fit {
+    width: fit-content;
+}
+
+.hidden {
+    display: none;
+}
