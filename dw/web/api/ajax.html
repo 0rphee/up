@@ -1,0 +1,20 @@
+<script>
+  function myajax() {
+    $.ajax({
+      url: "select.php", // change this to the correct endpoint
+      type: "POST",
+      dataType: "json",
+      data: {
+        query: "SELECT * FROM languaje",
+      },
+      success: function (response) {
+        console.log(response);
+      },
+      error: function (error) {
+        console.error("Erorr:", error);
+      },
+    });
+  }
+
+  myajax();
+</script>
