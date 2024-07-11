@@ -38,12 +38,73 @@
     ></script>
     <!-- JQUERY -->
 
-    <script defer src="script.js"></script>
-    <link rel="stylesheet" href="styles.css" />
+    <script defer src="assets/js/script.js"></script>
+    <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
 
-  <body class="vh-100 p-3 d-flex flex-column gap-2">
-    <h1>Consulta de Datos</h1>
+  <body class="w-100 h-100 p-3 d-flex flex-column gap-2 align-items-center">
+    <h1>Visitas a Museos</h1>
+
+    <!-- FILTROS -->
+    <div class="accordion w-100" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+          >
+            Filtros
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse show"
+          data-bs-parent="#accordionExample"
+        >
+          <div
+            class="accordion-body d-flex flex-wrap gap-3 justify-content-center"
+          >
+            <!-- 
+              FORM SELECT 
+              Llenado por JS
+            -->
+            <button type="button" class="btn btn-primary row-gap-5">
+              <i class="fa-solid fa-magnifying-glass me-2"></i> Buscar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FILTROS -->
+
+    <!-- RESUMEN -->
+    <div class="container mt-4 text-center">
+      <div class="row custom-container">
+        <div class="col d-flex flex-column align-items-center">
+          <h2>58</h2>
+          <div>Visitas</div>
+        </div>
+        <div class="col d-flex flex-column align-items-center">
+          <h2>58</h2>
+          <div>No. Nacionales</div>
+        </div>
+        <div class="col d-flex flex-column align-items-center">
+          <h2>0</h2>
+          <div>No. Extranjeros</div>
+        </div>
+        <div class="col d-flex flex-column align-items-center">
+          <h2>Suajili</h2>
+          <div>Primera Lengua</div>
+        </div>
+        <div class="col d-flex flex-column align-items-center">
+          <h2>Arabe</h2>
+          <div>Segunda Lengua</div>
+        </div>
+      </div>
+    </div>
+    <!-- RESUMEN -->
 
     <div class="input-group">
       <button class="btn btn-primary" type="button" onclick="fetchData()">
@@ -57,7 +118,8 @@
       />
     </div>
 
-    <div class="table-responsive">
+    <!-- TABLA -->
+    <div class="table-responsive w-100">
       <table class="table table-striped table-hover">
         <thead>
           <tr id="thead"></tr>
@@ -66,5 +128,6 @@
         <tbody class="table-group-divider" id="tbody"></tbody>
       </table>
     </div>
+    <!-- TABLA -->
   </body>
 </html>

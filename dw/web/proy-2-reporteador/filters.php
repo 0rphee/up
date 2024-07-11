@@ -2,7 +2,18 @@
 include_once "config.php";
 
 $conn = connectOrDie();
-$query = $_POST["query"];
+
+$table = $_POST['table'];
+$nameInTable = $_POST["nameInTable"];
+
+// echo var_dump($_POST);
+if (isset($_POST["distinct"])) {
+    $query = "SELECT DISTINCT($nameInTable) FROM $table";
+} else {
+
+    $query = "SELECT id, $nameInTable FROM $table";
+}
+
 $result = $conn->query($query);
 
 $data = [];
