@@ -1,0 +1,89 @@
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.botones-container,
+.rueda-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.botones-container {
+  width: 40%;
+  height: 100%;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.botones-container>button {
+  height: 3rem;
+  aspect-ratio: 1 / 1;
+}
+
+
+.botones-container>button,
+.circle {
+  box-shadow: 0px 0px 15px black;
+  background-image: url("https://besthqwallpapers.com/Uploads/20-7-2020/137659/gray-rock-texture-stone-texture-gray-stone-background-rock-background-natural-stone-texture.jpg");
+}
+
+.rueda-container {
+  width: 60%;
+  height: 100%;
+  display: flex;
+}
+
+.circle {
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  position: absolute;
+  top: auto;
+  left: auto;
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.circle.selected {
+  border: 0.1em solid blue;
+}
+
+.circle i {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  color: black;
+  transition: transform 0.5s ease-in-out, left 0.5s ease-in-out, top 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.circle.selected i {
+  color: blue;
+}
+
+#c1 {
+  background-color: red;
+  height: 90%;
+}
+
+#c2 {
+  background-color: green;
+  height: 70%;
+}
+
+#c3 {
+  background-color: yellow;
+  height: 50%;
+}
+
+#c4 {
+  background-color: orange;
+  height: 30%;
+}
+
+#c5 {
+  background-color: blue;
+  height: 10%;
+}
