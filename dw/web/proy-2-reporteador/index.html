@@ -42,8 +42,8 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
 
-  <body class="w-100 h-100 p-3 d-flex flex-column gap-2 align-items-center">
-    <h1>Visitas a Museos</h1>
+  <body class="w-100 p-3 d-flex flex-column gap-4 align-items-center">
+    <h1 class="m-0">Visitas a Museos</h1>
 
     <!-- FILTROS -->
     <div class="accordion w-100" id="accordionExample">
@@ -70,7 +70,7 @@
               FORM SELECT 
               Llenado por JS
             -->
-            <button type="button" class="btn btn-primary row-gap-5">
+            <button type="button" id="btn-search" class="btn btn-primary row-gap-5">
               <i class="fa-solid fa-magnifying-glass me-2"></i> Buscar
             </button>
           </div>
@@ -80,18 +80,18 @@
     <!-- FILTROS -->
 
     <!-- RESUMEN -->
-    <div class="container mt-4 text-center">
-      <div class="row custom-container">
+    <div class="container-fluid text-center border rounded py-4 w-100">
+      <div class="row">
         <div class="col d-flex flex-column align-items-center">
-          <h2>58</h2>
+          <h2 id="visitas-tot">0</h2>
           <div>Visitas</div>
         </div>
         <div class="col d-flex flex-column align-items-center">
-          <h2>58</h2>
+          <h2 id="visitas-nac">0</h2>
           <div>No. Nacionales</div>
         </div>
         <div class="col d-flex flex-column align-items-center">
-          <h2>0</h2>
+          <h2 id="visitas-ext">0</h2>
           <div>No. Extranjeros</div>
         </div>
         <div class="col d-flex flex-column align-items-center">
@@ -105,18 +105,6 @@
       </div>
     </div>
     <!-- RESUMEN -->
-
-    <div class="input-group">
-      <button class="btn btn-primary" type="button" onclick="fetchData()">
-        Fetch
-      </button>
-      <input
-        class="form-control"
-        type="text"
-        id="query"
-        placeholder="SELECT * FROM languages"
-      />
-    </div>
 
     <!-- TABLA -->
     <div class="table-responsive w-100">
