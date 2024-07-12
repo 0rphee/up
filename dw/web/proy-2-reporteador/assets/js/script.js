@@ -113,7 +113,7 @@ function fetchData() {
   });
 
   $.ajax({
-    url: "select.php",
+    url: "assets/php/select.php",
     type: "POST",
     // dataType: "json",
     data: { filtros: filtros },
@@ -253,7 +253,7 @@ function fetchFilters() {
 
     if (itemActual.table) {
       $.ajax({
-        url: "filters.php",
+        url: "assets/php/filters.php",
         method: "POST",
         data: itemActual,
         success: function (resp) {
