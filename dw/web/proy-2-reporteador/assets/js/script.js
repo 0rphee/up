@@ -1,22 +1,12 @@
 const diccionario = {
-  medio_transporte: {
-    title: "Medio de Transporte",
-    table: "transporte",
+  estado: {
+    title: "Estado",
+    table: "estado",
     nameInTable: "Nombre",
     filtro: true,
   },
-  tipo_grupo: {
-    title: "Tipo de Acompañantes",
-    table: "relacion",
-    nameInTable: "Nombre",
-    filtro: true,
-  },
-  motivo: {
-    title: "Motivo de Visita",
-    table: "motivos",
-    nameInTable: "Motivo",
-    filtro: true,
-  },
+  sexo: { title: "Sexo", table: "", nameInTable: "", filtro: false },
+  edad: { title: "Edad", table: "", nameInTable: "", filtro: false },
   residencia: {
     title: "Pais de residencia",
     table: "pais",
@@ -27,30 +17,6 @@ const diccionario = {
     title: "Nacionalidad",
     table: "pais",
     nameInTable: "Nombre",
-    filtro: true,
-  },
-  primera_leng: {
-    title: "1ra Lengua",
-    table: "lenguaje",
-    nameInTable: "Nombre",
-    filtro: true,
-  },
-  frecuencia_visita: {
-    title: "Frecuencia",
-    table: "frec_visita",
-    nameInTable: "Rango",
-    filtro: true,
-  },
-  estado: {
-    title: "Estado",
-    table: "estado",
-    nameInTable: "Nombre",
-    filtro: true,
-  },
-  medio_com: {
-    title: "Medio de Comunicacion",
-    table: "comunicacion",
-    nameInTable: "Medio",
     filtro: true,
   },
   escolaridad: {
@@ -66,20 +32,53 @@ const diccionario = {
     filtro: true,
     distinct: true,
   },
-  // SOLO COLUMNAS, NO FILTROS
-  sexo: { title: "Sexo", table: "", nameInTable: "", filtro: false },
-  edad: { title: "Edad", table: "", nameInTable: "", filtro: false },
+  primera_leng: {
+    title: "1ra Lengua",
+    table: "lenguaje",
+    nameInTable: "Nombre",
+    filtro: true,
+  },
   segunda_leng: {
     title: "2da Lengua",
     table: "lenguaje",
     nameInTable: "Nombre",
     filtro: false,
   },
+  frecuencia_visita: {
+    title: "Frecuencia",
+    table: "frec_visita",
+    nameInTable: "Rango",
+    filtro: true,
+  },
+  medio_com: {
+    title: "Medio de Comunicacion",
+    table: "comunicacion",
+    nameInTable: "Medio",
+    filtro: true,
+  },
+  motivo: {
+    title: "Motivo de Visita",
+    table: "motivos",
+    nameInTable: "Motivo",
+    filtro: true,
+  },
+  medio_transporte: {
+    title: "Medio de Transporte",
+    table: "transporte",
+    nameInTable: "Nombre",
+    filtro: true,
+  },
   tiempo_traslado: {
     title: "Tiempo de Traslado",
     table: "",
     nameInTable: "",
     filtro: false,
+  },
+  tipo_grupo: {
+    title: "Tipo de Acompañantes",
+    table: "relacion",
+    nameInTable: "Nombre",
+    filtro: true,
   },
   tamaño_grupo: {
     title: "Tamaño del Grupo",
@@ -112,15 +111,14 @@ function fetchData() {
     filtros[currentFilterName].val = currentFilterValue;
     // }
   });
-  // console.log("filtros", filtros);
 
   $.ajax({
     url: "select.php",
     type: "POST",
     // dataType: "json",
-    data: { filtros: filtros ? filtros : "" },
+    data: { filtros: filtros },
     success: (resp) => {
-      console.log("response", resp);
+      // console.log("response", resp);
       resp = JSON.parse(resp);
 
       // copiar datos de 2da lengua
@@ -128,12 +126,56 @@ function fetchData() {
         diccionario.segunda_leng.dict = structuredClone(
           diccionario.primera_leng.dict,
         );
+        console.log("dic completo", diccionario);
       }
 
       const visitasTot = resp.length;
-      const visitasNac = 0;
-      const visitasExt = 0;
+      let visitasNac = 0;
+      let visitasExt = 0;
 
+      let primeraLengCount = {
+        data: {},
+        add: function (item) {
+          if (this.data[item]) {
+            this.data[item]++;
+          } else {
+            this.data[item] = 1;
+          }
+        },
+        getMax: function () {
+          let maxKey = null;
+          let maxValue = 0;
+          for (let key in this.data) {
+            if (this.data[key] > maxValue) {
+              maxValue = this.data[key];
+              maxKey = key;
+            }
+          }
+          return [maxKey, maxValue];
+        },
+      };
+
+      let segundaLengCount = {
+        data: {},
+        add: function (item) {
+          if (this.data[item]) {
+            this.data[item]++;
+          } else {
+            this.data[item] = 1;
+          }
+        },
+        getMax: function () {
+          let maxKey = null;
+          let maxValue = 0;
+          for (let key in this.data) {
+            if (this.data[key] > maxValue) {
+              maxValue = this.data[key];
+              maxKey = key;
+            }
+          }
+          return [maxKey, maxValue];
+        },
+      };
       let filas = "";
 
       if (resp.length === 0) {
@@ -144,12 +186,6 @@ function fetchData() {
         resp.forEach((element) => {
           filas += "<tr>";
           Object.entries(element).forEach(([_k, val]) => {
-            // console.log(_k, val);
-            if (_k == "segunda_leng") {
-              // console.log("segunda", _k, val);
-              // console.log(diccionario[_k].dict);
-              // console.log(diccionario);
-            }
             if (diccionario[_k].dict) {
               filas += `<td>${diccionario[_k].dict[val]}</td>`;
             } else {
@@ -157,7 +193,20 @@ function fetchData() {
             }
           });
           filas += "</tr>";
+
+          if (element.nacionalidad == 15) {
+            // 15: Mexico
+            visitasNac += 1;
+          } else {
+            visitasExt += 1;
+          }
+
+          primeraLengCount.add(element.primera_leng);
+          segundaLengCount.add(element.segunda_leng);
         });
+
+        console.log("primera", primeraLengCount);
+        console.log("segunda", segundaLengCount);
 
         let headers = "";
         Object.entries(resp[0]).forEach(([k, _val]) => {
@@ -168,11 +217,16 @@ function fetchData() {
       }
 
       $("#tbody").html(filas);
+
       $("#visitas-tot").html(visitasTot);
-
       $("#visitas-nac").html(visitasNac);
-
       $("#visitas-ext").html(visitasExt);
+
+      let prim = diccionario.primera_leng.dict[primeraLengCount.getMax()[0]];
+      let segund = diccionario.segunda_leng.dict[segundaLengCount.getMax()[0]];
+      console.log(primeraLengCount.getMax(), segundaLengCount.getMax());
+      $("#primera-leng").html(prim);
+      $("#segunda-leng").html(segund);
     },
     error: (err) => {
       console.error("error fetchData", err);
@@ -189,7 +243,7 @@ function fetchFilters() {
     if (!itemActual.filtro) {
       return;
     }
-    const select = $(`<div class="border pt-1 px-1 rounded">
+    const select = $(`<div class="border pt-1 px-1 rounded selector">
                                     <label class="form-label mx-2" for="${key}">${itemActual.title}</label>
                                     <select class="form-select border-0" id="${key}" name="${key}">
                                         <option value="">Todos</option>
