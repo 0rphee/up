@@ -1,0 +1,52 @@
+/*
+
+dorado
+#ca9a41
+
+*/
+
+:root {
+  --dorado: #ca9a41;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+accordion,
+.accordion-body {
+  background-color: black !important;
+  color: white !important;
+}
+
+.accordion-button,
+.accordion-button>* {
+  background-color: var(--dorado) !important;
+  color: white !important;
+  font-weight: bolder;
+  font-size: x-large;
+}
+
+.resumen {
+  background-color: var(--dorado);
+}
+
+th {
+  color: var(--dorado) !important;
+  background-color: black !important;
+}
+
+
+tr,
+td {
+  color: black !important;
+  background-color: rgb(215 215 219) !important;
+}
+
+
+.selector {
+  background-color: white;
+  color: black;
+
+}
