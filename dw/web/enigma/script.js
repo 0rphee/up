@@ -1,4 +1,4 @@
-let selectedCircleId = "c1";
+let selectedCircleId = "c5";
 
 function distributeIcons(circleId) {
   const circle = $(`#${circleId}`);
@@ -22,7 +22,9 @@ function distributeIcons(circleId) {
 function rotateCircle(circleId, direction) {
   var circle = $("#" + circleId);
   var currentRotation = parseFloat(circle.data("rotation")) || 0;
-  var newRotation = currentRotation + direction * 20;
+
+  rotAmount = { c5: 28, c4: 23, c3: 18, c2: 13, c1: 8 };
+  var newRotation = currentRotation + direction * rotAmount[circleId];
 
   circle.data("rotation", newRotation);
   circle.css({
@@ -46,42 +48,47 @@ function isColliding(element1, element2) {
 }
 
 function checkCollisions() {
-  const collisionItem = document.getElementById("collisionItem");
+  const collisionItem = document.getElementById("collision-item");
   const icons = document.querySelectorAll("i.check-pos");
 
+  let collisionCount = 0;
   icons.forEach((icon) => {
     if (isColliding(icon, collisionItem)) {
       icon.classList.add("colliding");
-      console.log(`Icon is colliding with the item`);
+      collisionCount += 1;
     } else {
       icon.classList.remove("colliding");
     }
   });
+  if (collisionCount == 5) {
+    alert("You win!");
+  }
 }
 
-$(document).ready(function () {
-  const circles = $(".circle");
+function assignRandomCheckPos(circle) {
+  const icons = circle.find("i");
+  const randomIndex = Math.floor(Math.random() * icons.length);
+  icons.eq(randomIndex).addClass("check-pos");
+}
 
-  // Create and position the collision item
-  const ruedaContainer = $(".rueda-container");
-  const collisionItem = $("<div id='collisionItem'></div>");
-  collisionItem.css({
-    position: "relative",
-    left: "0%",
-    top: "0%",
-    height: "1px",
-    width: "45%",
-    backgroundColor: "red",
-    transform: "translate(-50%, -50%)",
-    zIndex: 1000,
-  });
-  ruedaContainer.append(collisionItem);
+function rotateRandomTimes(circle) {
+  const randomRotations = Math.floor(Math.random() * 18) + 1; // 1 to 18 rotations
+  for (let i = 0; i < randomRotations; i++) {
+    const direction = Math.random() < 0.5 ? 1 : -1;
+    rotateCircle(circle.attr("id"), direction);
+  }
+}
+
+$(document).ready(async function () {
+  const circles = $(".circle");
 
   circles.each(function () {
     const circle = $(this);
     const circleId = circle.attr("id");
 
     distributeIcons(circleId);
+    assignRandomCheckPos(circle);
+    rotateRandomTimes(circle);
 
     circle.click(function () {
       $(".circle").removeClass("selected");
@@ -97,4 +104,8 @@ $(document).ready(function () {
     await new Promise((r) => setTimeout(r, 300));
     checkCollisions();
   });
+
+  // Initial collision check after random rotations
+  await new Promise((r) => setTimeout(r, 300));
+  checkCollisions();
 });
