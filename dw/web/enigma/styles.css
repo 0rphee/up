@@ -92,8 +92,6 @@ body {
   color: red;
 }
 
-.circle i.check-pos.near-middle {
-
+.circle i.check-pos.colliding {
   color: pink;
-
 }
