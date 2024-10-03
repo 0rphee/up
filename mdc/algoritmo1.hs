@@ -28,8 +28,8 @@ divi a b
         let (!r, !q) = go (abs a) 0
          in if
               | a > 0 -> (r, q)
-              | r == 0 -> (-r, 0)
-              | otherwise -> (-q - 1, b - r)
+              | r == 0 -> (0, -q)
+              | otherwise -> (b - r ,-q - 1)
   where
     go !r !q
       | r >= b = go (r - b) (q + 1)
