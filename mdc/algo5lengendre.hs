@@ -1,6 +1,6 @@
-{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
-
 {-# HLINT ignore "Redundant if" #-}
+{-# LANGUAGE MultiWayIf #-}
+{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
 
 module Main (main) where
 
@@ -17,16 +17,25 @@ import Text.Printf (printf)
     > runghc algoritmo1.hs
 -}
 
+myMod :: Word -> Word -> Word
+myMod a b
+  | (0, 0) <- (a, b) = 0
+  | otherwise = go a
+  where
+    go !r
+      | r >= b = go (r - b)
+      | otherwise = r
+
 esPrimo :: Word -> Bool
 esPrimo n
   | n <= 1 = False
   | n <= 3 = True
-  | even n || ((n `mod` 3) == 0) = False
+  | even n || ((n `myMod` 3) == 0) = False
   | otherwise = go 5
   where
     go i
       | (i * i) <= n =
-          if ((n `mod` i) == 0) || ((n `mod` i + 2) == 0)
+          if ((n `myMod` i) == 0) || ((n `myMod` i + 2) == 0)
             then False
             else go (i + 6)
       | otherwise = True
