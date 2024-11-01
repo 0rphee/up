@@ -25,3 +25,6 @@
 [submodule "dw-bot"]
 	path = dw/web/bot
 	url = git@github.com:0rphee/dw-bot.git
+[submodule "pract-nessus"]
+	path = cib/pract-nessus
+	url = git@github.com:0rphee/pract-nessus.git
