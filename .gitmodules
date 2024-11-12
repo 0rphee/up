@@ -28,3 +28,6 @@
 [submodule "pract-nessus"]
 	path = cib/pract-nessus
 	url = git@github.com:0rphee/pract-nessus.git
+[submodule "servicio-becario"]
+	path = bec
+	url = git@github.com:0rphee/servicio-becario.git
