@@ -31,3 +31,6 @@
 [submodule "servicio-becario"]
 	path = bec
 	url = git@github.com:0rphee/servicio-becario.git
+[submodule "asmh"]
+	path = arq/asmh
+	url = git@github.com:0rphee/asmh.git
