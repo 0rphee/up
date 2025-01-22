@@ -26,8 +26,9 @@
         devShells.default = pkgs.devshell.mkShell {
           # devshell.name = "";
           commands = [
-            { package = "jdk23"; } # node & npm
+            { package = "jdk21"; }
             { package = "gradle"; }
+            { package = "maven"; }
           ];
         };
       }
