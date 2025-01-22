@@ -34,3 +34,6 @@
 [submodule "asmh"]
 	path = arq/asmh
 	url = git@github.com:0rphee/asmh.git
+[submodule "tlp-genome-rs"]
+	path = tlp/tlp-genome-rs
+	url = git@github.com:0rphee/tlp-genome-rs.git
