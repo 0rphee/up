@@ -1,6 +1,9 @@
 {
   inputs = {
+
     devshell.url = "github:numtide/devshell";
+    devshell.inputs.nixpkgs.follows = "nixpkgs";
+
     flake-utils.url = "github:numtide/flake-utils";
   };
 
