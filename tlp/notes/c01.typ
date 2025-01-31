@@ -10,7 +10,7 @@
   date: datetime(year: 2025, month: 01, day: 28),
   date-format: "[day padding:zero]-[month repr:numerical]-[year repr:full]",
   // table-of-contents: outline(title: "custom title"),
-  abstract: [],
+  abstract: [Sesion 1],
   // bibliography: bibliography("refs.bib"),
   // figure-index: (enabled: true, title: "figindex"),
   // table-index: (enabled: true, title: "tabindex"),
