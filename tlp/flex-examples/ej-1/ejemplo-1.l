@@ -1,4 +1,6 @@
 %{
+#include <iostream>
+
 unsigned int num_lines = 0;
 unsigned int num_chars = 0;
 /* #pragma warning(disable: ) */
@@ -20,4 +22,5 @@ unsigned int num_chars = 0;
 int main() {
     yylex();
     printf( "# of lines = %d, # of chars = %d\n", num_lines, num_chars );
+    std::cout << "cout c++ " << std::endl;
 }

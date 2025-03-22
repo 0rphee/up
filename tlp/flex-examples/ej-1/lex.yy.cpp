@@ -440,10 +440,13 @@ int yy_flex_debug = 0;
 char *yytext;
 #line 1 "ejemplo-1.l"
 #line 2 "ejemplo-1.l"
+#include <iostream>
+
 unsigned int num_lines = 0;
 unsigned int num_chars = 0;
-#line 445 "lex.yy.cpp"
-#line 446 "lex.yy.cpp"
+/* #pragma warning(disable: ) */
+#line 448 "lex.yy.cpp"
+#line 449 "lex.yy.cpp"
 
 #define INITIAL 0
 
@@ -660,10 +663,10 @@ YY_DECL
 		}
 
 	{
-#line 6 "ejemplo-1.l"
+#line 9 "ejemplo-1.l"
 
 
-#line 666 "lex.yy.cpp"
+#line 669 "lex.yy.cpp"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -723,7 +726,7 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
-#line 8 "ejemplo-1.l"
+#line 11 "ejemplo-1.l"
 {
         ++num_lines;
         ++num_chars;
@@ -731,17 +734,17 @@ YY_RULE_SETUP
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 13 "ejemplo-1.l"
+#line 16 "ejemplo-1.l"
 {
        ++num_chars;
    }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 17 "ejemplo-1.l"
+#line 20 "ejemplo-1.l"
 ECHO;
 	YY_BREAK
-#line 744 "lex.yy.cpp"
+#line 747 "lex.yy.cpp"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1746,11 +1749,12 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 17 "ejemplo-1.l"
+#line 20 "ejemplo-1.l"
 
 
 int main() {
     yylex();
     printf( "# of lines = %d, # of chars = %d\n", num_lines, num_chars );
+    std::cout << "cout c++ " << std::endl;
 }
 
