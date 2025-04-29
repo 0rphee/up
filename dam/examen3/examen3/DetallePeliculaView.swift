@@ -8,11 +8,32 @@
 import SwiftUI
 
 struct DetallePeliculaView: View {
+    var pelicula: Pelicula
+    var onEditar: (Pelicula) -> Void
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading, spacing: 12) {
+            Text(pelicula.titulo).font(.title)
+            Text("Director: \(pelicula.director)")
+            Text("Año: \(pelicula.anio)")
+            Text("Reseña: \(pelicula.resena)")
+            Text("Calificación: " + String(pelicula.calificacion) + "/5")
+            Text(pelicula.vista ? "VISTA" : "NO VISTA")
+                .foregroundColor(pelicula.vista ? .green : .red)
+                .fontWeight(.bold)
+
+            Spacer()
+        }
+        .padding()
+        .navigationTitle("Detalle")
+        .toolbar {
+            Button("Editar") {
+                onEditar(pelicula)
+            }
+        }
     }
 }
 
 #Preview {
-    DetallePeliculaView()
+    DetallePeliculaView(pelicula: Pelicula.interestellar, onEditar: { p in })
 }
