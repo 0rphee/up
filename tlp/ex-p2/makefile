@@ -21,4 +21,5 @@ clean:
 
 zip:
 	$(MAKE) run
+	rm $(TARGET)
 	zip -r $(ZIP_FILE) . -x $(ZIP_FILE) -x "*.DS_Store"
