@@ -29,9 +29,10 @@ WORD    [a-zA-Z]+
     std::string word(yytext);
     transform(word.begin(), word.end(), word.begin(), ::tolower);
 
-    if (!is_connective(word)) {
-        std::cout << word;
+    if (is_connective(word)) {
         frecuencia[word]++;
+    } else {
+        std::cout << word;
     }
 }
 
