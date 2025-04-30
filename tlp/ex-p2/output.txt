@@ -1,0 +1,156 @@
+flex -o lex.yy.cc ex-p2.l
+c++ -std=c++11 -Wall -Wextra -o ex-p2 lex.yy.cc
+./ex-p2 input.txt
+ sun was shining brightly   sky! sarah felt  surge of excitement as she 
+planned her day off. she decided it was  perfect time for  picnic   park. 
+with  sense of anticipation, she began gathering her supplies.
+
+packing her favorite sandwiches  some fresh fruit, she gathered everything 
+she needed.  delicious cake was  final touch to her picnic basket. every item 
+reminded her of  fun she would have. with  smile  her face, she stepped 
+outside, ready for adventure!
+
+ her way to  park, she noticed how cheerful everyone looked. children were 
+playing happily,  laughter filled  air. was this  perfect day for  picnic 
+ what?  warm breeze made  day even more enjoyable; it was just what she needed.
+
+arriving at  park, sarah found  beautiful spot beneath  tall tree. it offered 
+shade   lovely view of  lake. she quickly spread out her blanket  set up 
+her picnic area, feeling content. everything was coming together perfectly for 
+her fun day ahead.
+
+after  while, her friends joined her, bringing their favorite snacks as well. they 
+shared stories  reminisced about old times, laughing at fond memories. what  wonderful 
+way to spend  day! as  sun began to set, they felt grateful for  beautiful 
+moments they had created together!
+
+--- Frecuencia de palabras ---
+
+created: 1
+had: 1
+grateful: 1
+memories: 1
+wonderful: 1
+laughing: 1
+old: 1
+moments: 1
+reminisced: 1
+stories: 1
+about: 1
+they: 3
+snacks: 1
+their: 1
+bringing: 1
+ahead: 1
+feeling: 1
+area: 1
+offered: 1
+blanket: 1
+coming: 1
+spread: 1
+shade: 1
+some: 1
+up: 1
+set: 2
+shared: 1
+ready: 1
+beautiful: 2
+found: 1
+together: 2
+arriving: 1
+well: 1
+just: 1
+breeze: 1
+while: 1
+perfectly: 1
+sky: 1
+quickly: 1
+warm: 1
+spend: 1
+enjoyable: 1
+air: 1
+friends: 1
+filled: 1
+of: 4
+stepped: 1
+looked: 1
+lake: 1
+how: 1
+brightly: 1
+noticed: 1
+times: 1
+adventure: 1
+outside: 1
+gathered: 1
+this: 1
+face: 1
+were: 1
+even: 1
+way: 2
+after: 1
+smile: 1
+have: 1
+tree: 1
+view: 1
+what: 3
+fun: 2
+out: 1
+item: 1
+off: 1
+it: 3
+content: 1
+touch: 1
+final: 1
+happily: 1
+as: 3
+for: 5
+surge: 1
+everything: 2
+every: 1
+tall: 1
+she: 10
+park: 3
+fresh: 1
+sandwiches: 1
+spot: 1
+shining: 1
+anticipation: 1
+fruit: 1
+supplies: 1
+sun: 2
+laughter: 1
+gathering: 1
+delicious: 1
+joined: 1
+with: 2
+lovely: 1
+to: 4
+sarah: 2
+playing: 1
+picnic: 4
+reminded: 1
+basket: 1
+would: 1
+decided: 1
+children: 1
+more: 1
+sense: 1
+excitement: 1
+at: 2
+time: 1
+cheerful: 1
+perfect: 2
+began: 2
+everyone: 1
+felt: 2
+packing: 1
+her: 12
+favorite: 2
+made: 1
+was: 6
+fond: 1
+planned: 1
+beneath: 1
+needed: 2
+day: 5
+cake: 1
