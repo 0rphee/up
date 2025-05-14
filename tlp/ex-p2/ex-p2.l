@@ -15,7 +15,6 @@ bool is_connective(const std::string& word) {
     return false;
 }
 
-#define YY_DECL int yylex()
 
 %}
 
