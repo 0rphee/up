@@ -40,3 +40,6 @@
 [submodule "compdist-proy"]
 	path = compdist/compdist-proy
 	url = git@github.com:0rphee/compdist-proy.git
+[submodule "tlp-final"]
+	path = tlp/tlp-final
+	url = git@github.com:0rphee/tlp-final.git
