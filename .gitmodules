@@ -21,7 +21,7 @@
 	url = git@github.com:0rphee/ia-vuelos.git
 [submodule "dw-portfolio"]
 	path = dw/dw-portfolio
-	url = git@github.com:Ksound22/developer-portfolio.git
+	url = git@github.com:0rphee/dw-portfolio.git
 [submodule "dw-bot"]
 	path = dw/web/bot
 	url = git@github.com:0rphee/dw-bot.git
