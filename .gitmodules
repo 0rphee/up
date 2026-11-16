@@ -49,3 +49,6 @@
 [submodule "inscd"]
 	path = inscd
 	url = git@github.com:0rphee/inscd.git
+[submodule "sp"]
+	path = sp
+	url = git@github.com:0rphee/sp.git
