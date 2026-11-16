@@ -46,3 +46,6 @@
 [submodule "cripto_final"]
 	path = cripto/cripto_final
 	url = git@github.com:0rphee/cripto_final.git
+[submodule "inscd"]
+	path = inscd
+	url = git@github.com:0rphee/inscd.git
