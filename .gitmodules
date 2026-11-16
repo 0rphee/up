@@ -52,3 +52,6 @@
 [submodule "sp"]
 	path = sp
 	url = git@github.com:0rphee/sp.git
+[submodule "agvd"]
+	path = agvd
+	url = git@github.com:0rphee/agvd.git
